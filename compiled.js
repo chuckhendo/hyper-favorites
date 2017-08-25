@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const { EOL } = require("os");
 
 exports.decorateConfig = config => {
     const DEFAULT_CONFIG = {
@@ -91,8 +92,8 @@ exports.decorateTerm = (Term, { React }) => {
 
             if (this._term && index) {
                 const favItem = this.props.favorites[index];
-                const cmd = Array.isArray(favItem.cmd) ? favItem.cmd.join('\n') : favItem.cmd;
-                this._term.keyboard.terminal.io.sendString(`${cmd}\n`);
+                const cmd = Array.isArray(favItem.cmd) ? favItem.cmd.join(EOL) : favItem.cmd;
+                this._term.keyboard.terminal.io.sendString(`${cmd}${EOL}`);
             }
         }
 

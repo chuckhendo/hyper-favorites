@@ -3,7 +3,7 @@
   "keywords": [
     "hyper"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Hyper plugin to add a configurable 'favorite commands' bar to the bottom of your terminal. Currently in an alpha state",
   "main": "compiled.js",
   "scripts": {
@@ -13,10 +13,10 @@
   "author": "Carl Henderson <chuckhendo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
   },
   "dependencies": {
     "styled-components": "^2.1.2"
   }
 }
-
