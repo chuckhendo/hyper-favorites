@@ -1,0 +1,21 @@
+{
+  "name": "hyper-favorites",
+  "keywords": [
+    "hyper"
+  ],
+  "version": "0.1.0",
+  "description": "Hyper plugin to add a configurable 'favorite commands' bar to the bottom of your terminal. Currently in an alpha state",
+  "main": "compiled.js",
+  "scripts": {
+    "watch": "babel index.js --watch --out-file compiled.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "dependencies": {
+    "styled-components": "^2.1.2"
+  }
+}
