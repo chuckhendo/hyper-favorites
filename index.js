@@ -10,8 +10,8 @@ exports.decorateConfig = (config) => {
         css: `
             ${config.css || ''}
 
-            .terms_terms {
-                margin-bottom: 30px;
+            .term_fit {
+                padding-bottom: 34px !important;
             }
         `
     };
@@ -24,7 +24,7 @@ exports.decorateTerm = (Term, { React }) => {
 
     const Footer = styled.footer`
         box-sizing: border-box;
-        position: fixed;
+        position: absolute;
         bottom: 0;
         height: 34px;
         left: 0;
