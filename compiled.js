@@ -13,6 +13,29 @@ exports.decorateConfig = config => {
             .term_fit {
                 padding-bottom: 34px !important;
             }
+
+            .favorites_footer {
+                box-sizing: border-box;
+                position: absolute;
+                bottom: 0;
+                height: 34px;
+                left: 0;
+                width: 100%;
+                border-top: 1px solid ${config.borderColor};
+                padding: 4px;
+                display: flex;
+            }
+
+            .favorites_button {
+                padding: 0 10px;
+                margin-right: 5px;
+                background: ${config.borderColor};
+                color: ${config.foregroundColor};
+                transition: 0.1s background;
+                border: none;
+                outline: none;
+                border-radius: 12px;
+            }
         `
     };
 
@@ -20,39 +43,6 @@ exports.decorateConfig = config => {
 };
 
 exports.decorateTerm = (Term, { React }) => {
-    const styled = require('styled-components').default;
-
-    const Footer = styled.footer`
-        box-sizing: border-box;
-        position: absolute;
-        bottom: 0;
-        height: 34px;
-        left: 0;
-        width: 100%;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 4px;
-        display: flex;
-    `;
-
-    const Button = styled.button`
-        padding: 0 10px;
-        margin-right: 5px;
-        background: rgba(255, 255, 255, 0.2);
-        transition: 0.1s background;
-        border: none;
-        outline: none;
-        border-radius: 12px;
-        font-size: 14px;
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        &:active {
-            background: rgba(255, 255, 255, 0.3);
-        }
-    `;
-
     class Favorites extends React.Component {
         constructor(props) {
             super(props);
@@ -61,12 +51,12 @@ exports.decorateTerm = (Term, { React }) => {
         render() {
 
             return React.createElement(
-                Footer,
-                null,
+                'footer',
+                { className: 'favorites_footer' },
                 this.props.favorites.map((fav, i) => {
                     return React.createElement(
-                        Button,
-                        { value: i, onClick: this.props.onClick },
+                        'button',
+                        { className: 'favorites_button', 'data-index': i, onClick: this.props.onClick },
                         fav.name
                     );
                 })
@@ -88,7 +78,8 @@ exports.decorateTerm = (Term, { React }) => {
         }
 
         onFavoritesClick(e) {
-            const index = e.target.value;
+            const index = e.target.dataset.index;
+            this.props.term.div_.focus();
 
             if (this._term && index) {
                 const favItem = this.props.favorites[index];

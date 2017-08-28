@@ -3,7 +3,7 @@
   "keywords": [
     "hyper"
   ],
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "Hyper plugin to add a configurable 'favorite commands' bar to the bottom of your terminal. Currently in an alpha state",
   "main": "compiled.js",
   "scripts": {
