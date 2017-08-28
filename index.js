@@ -23,33 +23,38 @@ exports.decorateTerm = (Term, { React }) => {
     const styled = require('styled-components').default;
 
     const Footer = styled.footer`
-        box-sizing: border-box;
-        position: absolute;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
         bottom: 0;
+        box-sizing: border-box;
+        display: flex;
         height: 34px;
         left: 0;
-        width: 100%;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding: 4px;
-        display: flex;
+        position: absolute;
+        width: 100%;
     `;
 
     const Button = styled.button`
-        padding: 0 10px;
-        margin-right: 5px;
-        background: rgba(255, 255, 255, 0.2);
-        transition: 0.1s background;
+        background: #000;
         border: none;
-        outline: none;
-        border-radius: 12px;
+        border-radius: 2px;
+        color: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
         font-size: 14px;
+        margin-right: 5px;
+        outline: none;
+        padding: 0 10px;
+        transition: 0.1s background, 0.1s color;
 
         &:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 1px 1px 3px #000;
+            color: rgba(255, 255, 255, 0.5);
         }
 
         &:active {
-            background: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.4);
         }
     `;
 
