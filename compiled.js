@@ -45,7 +45,7 @@ exports.decorateTerm = (Term, { React }) => {
         margin-right: 5px;
         outline: none;
         padding: 0 10px;
-        transition: 0.1s background, 0.1s color;
+        transition: 0.1s background, 0.1s color, 0.1s box-shadow;
 
         &:hover {
             background: rgba(255, 255, 255, 0.05);
